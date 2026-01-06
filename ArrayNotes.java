@@ -25,6 +25,7 @@ public class ArrayNotes
          *      
          *  This code creates an array that contains 10 int elements.
          */
+        int[] evens = new int[10];
         
         
         /*
