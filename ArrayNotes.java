@@ -42,6 +42,14 @@ public class ArrayNotes
         }
         
         // print the reference to the array and the array elements
+        System.out.println(evens);
+        
+        for(int i = 0; i < evens.length; i++)
+        {
+            System.out.println(i + ": " + evens[i]);
+        }
+        
+        
         
 
     }
@@ -53,7 +61,7 @@ public class ArrayNotes
          *      comma-separated values. It can be used to initialize the array. The length
          *      of the array is inferred based on the number of elements in the literal.
          */
-        
+        int[] odds = new int[] {1,3,5,7,9,11,13,15,17,19};
         /*
          * ArrayIndexOutOfBoundsException
          * 
@@ -61,6 +69,10 @@ public class ArrayNotes
          *      to a valid index. Otherwise, an ArrayIndexOutOfBoundsException is
          *      generated.
          */
+        for(int i = 0; i <= odds.length; i++)
+        {
+            //System.out.println(i + ": " + odds[i]);
+        }
 
         /*
          * Array References
@@ -71,18 +83,33 @@ public class ArrayNotes
          *  Assigning one array variable's value to another, copies the reference, not
          *      the array's elements.
          */
-
+        int[] moreOdds = odds;
+        odds[2] = 6;
+        System.out.println(moreOdds[2]);        // prints 6
         
         /*
          * Enhanced For Loops work with arrays.  No wrapper classes required.
          */
-
+        for(int odd : odds)
+        {
+            System.out.println(odd);
+        }
         
         /*
          * Limitations of Enhanced For Loops
          * 
+         * The local variable (e.g., odd) contains a copy of the value of the eleemnt in the array.
+         * 
          */
-
+        for(int odd : odds)
+        {
+            odd += 1;
+        }
+        
+        for(int odd : odds)
+        {
+            System.out.println(odd);
+        }
     }
     
     public static void createArrayOfCalendars()
