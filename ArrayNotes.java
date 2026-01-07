@@ -3,8 +3,8 @@ import java.util.GregorianCalendar;
 /**
  * Class live-coding notes on arrays.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author mrcallaghan 
+ * @version 07jan2026
  */
 public class ArrayNotes
 {
