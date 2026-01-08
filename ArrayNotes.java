@@ -67,6 +67,10 @@ public class ArrayNotes
          *      to a valid index. Otherwise, an ArrayIndexOutOfBoundsException is
          *      generated.
          */
+        for(int i = 0; i <= odds.length; i++)
+        {
+            //System.out.println(odds[i]);
+        }
 
         /*
          * Array References
@@ -77,17 +81,37 @@ public class ArrayNotes
          *  Assigning one array variable's value to another, copies the reference, not
          *      the array's elements.
          */
+        int[] moreOdds = odds;
+        odds[2] = 6;
+        System.out.println(moreOdds[2]);  // prints 6
 
         
         /*
          * Enhanced For Loops work with arrays.  No wrapper classes required.
          */
+        for(int odd : odds)
+        {
+            System.out.println(odd);
+        }
 
-        
+    
         /*
          * Limitations of Enhanced For Loops
          * 
+         * The local variable is a copy of the value in the array.
          */
+        for(int odd : odds)
+        {
+            odd += 1;
+            System.out.println(odd);
+            
+        }
+        
+        for(int odd : odds)
+        {
+            System.out.println(odd);
+        }
+        
 
     }
     
@@ -122,6 +146,13 @@ public class ArrayNotes
 
     }
     
+    /**
+     * Sum up a string of numbers based on a provided delimiter.
+     * 
+     * @param numbers string containing the numbers to add up
+     * @param delimiter the character(s) to use as the delimiter for the split method
+     * @return the sum of the numbers in the string
+     */
     public static int sumStringOfInts(String numbers, String delimiter)
     {
         int sum = 0;
@@ -133,6 +164,20 @@ public class ArrayNotes
          * Its purpose is to break a string into an array of substrings based 
          *      on a specified delimiter (e.g., " ").
          */
+        String[] nums = numbers.split(delimiter);
+        
+        for(String num : nums)
+        {
+            System.out.println(num);
+            /*
+             * parseInt is a static method from the Integer class.  It's on the quick refernece!
+             *      Returns the String argument as an int.
+             *      There is also a static method for doubles:
+             *          Double.parseDouble("7.7") return 7.7 as a double
+             */
+            int n = Integer.parseInt(num);
+            sum += n;
+        }
         
         
         return sum;
