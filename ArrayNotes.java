@@ -143,6 +143,9 @@ public class ArrayNotes
 
     }
     
+    /**
+     * Parse a passed string into an array based on a passed delimiter.
+     */
     public static int sumStringOfInts(String numbers, String delimiter)
     {
         int sum = 0;
@@ -154,6 +157,21 @@ public class ArrayNotes
          * Its purpose is to break a string into an array of substrings based 
          *      on a specified delimiter (e.g., " ").
          */
+        String[] nums = numbers.split(delimiter);
+        
+        for(String num : nums)
+        {
+            System.out.println(num);
+            /*
+             * parseInt is a static method from the Integer class on the AP Quick Reference.
+             *      Returns the String argument as an int.
+             *      There is also a static method for double:
+             *          Double.parseDouble("7.7") returns 7.7 as a double.
+             */
+            int n = Integer.parseInt(num);
+            
+            sum += n;
+        }
         
         
         return sum;
