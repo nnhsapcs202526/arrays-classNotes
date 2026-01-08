@@ -25,7 +25,7 @@ public class ArrayNotes
          *      
          *  This code creates an array that contains 10 int elements.
          */
-        
+        int[] evens = new int[10];
         
         /*
          * Set the value of each element in the array to the first 10 positive even
@@ -36,10 +36,19 @@ public class ArrayNotes
          *  Square brackets are used to reference a specific element in the array
          *      based on its index. Indicies are zero based.
          */
+        for(int i = 0; i < evens.length; i++)
+        {
+            evens[i] = (i + 1) * 2;
+        }
         
         
         // print the reference to the array and the array elements
+        System.out.println(evens);
         
+        for(int i = 0; i < evens.length; i++)
+        {
+            System.out.println(i + ": " + evens[i]);
+        }
 
     }
     
@@ -50,7 +59,7 @@ public class ArrayNotes
          *      comma-separated values. It can be used to initialize the array. The length
          *      of the array is inferred based on the number of elements in the literal.
          */
-        
+        int[] odds = new int[] {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
         /*
          * ArrayIndexOutOfBoundsException
          * 
