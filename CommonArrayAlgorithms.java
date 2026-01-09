@@ -14,10 +14,10 @@ public class CommonArrayAlgorithms
         {
             randomArray[ i ] = (int)( Math.random() * maxValue );
         }
-        
+
         return randomArray;
     }
-    
+
     /*
      * Prints the specified array to System.out
      * 
@@ -26,7 +26,7 @@ public class CommonArrayAlgorithms
     public static void printArray( int[] array )
     {
         System.out.print("[");
-        
+
         for(int i = 0; i < array.length; i++)
         {
             System.out.print(array[i]);
@@ -35,10 +35,10 @@ public class CommonArrayAlgorithms
                 System.out.print(", ");
             }
         }
-        
+
         System.out.println("]");
     }
-    
+
     /*
      * Array Algorithm #0: Sum and Average
      *  creates an array filled with random numbers
@@ -60,7 +60,7 @@ public class CommonArrayAlgorithms
         }
 
         average = sum / array.length;
-        
+
         printArray( array );
         System.out.println( "sum: " + sum + " average: " + average );
 
@@ -75,6 +75,13 @@ public class CommonArrayAlgorithms
      */
     public static void printElementSeparators()
     {
+        int[] array = createRandomArray(10, 100);
+        int cnt = array.length;
+        for(int i = 0; i < cnt-1; i++)
+        {
+            System.out.print("" + array[i] + "|");
+        }
+        System.out.print("" + array[cnt-1]);
     }
 
     /*
@@ -88,7 +95,18 @@ public class CommonArrayAlgorithms
      */
     public static int linearSearch( int valueToFind )
     {
-        return 0;
+        int[] array = createRandomArray(100, 100);
+        printArray(array);
+        int cnt = array.length;
+        for(int i = 0; i < cnt; i++)
+        {
+            if(array[i] == valueToFind)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     /*
@@ -102,7 +120,37 @@ public class CommonArrayAlgorithms
      */
     public static int countLessThan( int limit )
     {
-        return 0;
+        int[] anything = createRandomArray(10,limit+100);
+        int count = 0;
+        for (int num: anything)
+        {
+            if(num < limit)
+            {
+                count++;
+            }
+        }
+
+        printArray(anything);
+        System.out.println(count);
+        return count;
+    }
+     public static int countLessThan2( int limit )
+    {
+        int[] nums = createRandomArray(20,100);
+        int count = 0;
+       
+        for (int num : nums)
+        {
+            if (num < limit)
+            {
+                count++;
+            }
+        }
+       
+        printArray(nums);
+        System.out.println("count: " + count);
+       
+        return count;
     }
 
     /*
@@ -128,9 +176,17 @@ public class CommonArrayAlgorithms
      */
     public static int[] reverseArray()
     {
-        return null;
+        int array[] = createRandomArray(10,20);
+        int array2[] = new int[array.length];
+        int y=array.length;
+        for (int i = 0; i < array.length; i++){
+            array2[y-i-1]=array[i];
+        }
+        printArray(array);
+        printArray(array2);
+        return array2;
     }
-    
+
     /*
      * Array Algorithm #6: Mode
      *  creates an array filled with random numbers
@@ -146,8 +202,8 @@ public class CommonArrayAlgorithms
          *        create another array to keep track of how many times each value
          *        occurs (index is the number and the value is the number of occurrences)
          */
-         
-         return 0;
+
+        return 0;
     }
 
 }
