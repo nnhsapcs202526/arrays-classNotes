@@ -14,10 +14,10 @@ public class CommonArrayAlgorithms
         {
             randomArray[ i ] = (int)( Math.random() * maxValue );
         }
-        
+
         return randomArray;
     }
-    
+
     /*
      * Prints the specified array to System.out
      * 
@@ -26,7 +26,7 @@ public class CommonArrayAlgorithms
     public static void printArray( int[] array )
     {
         System.out.print("[");
-        
+
         for(int i = 0; i < array.length; i++)
         {
             System.out.print(array[i]);
@@ -35,10 +35,10 @@ public class CommonArrayAlgorithms
                 System.out.print(", ");
             }
         }
-        
+
         System.out.println("]");
     }
-    
+
     /*
      * Array Algorithm #0: Sum and Average
      *  creates an array filled with random numbers
@@ -60,7 +60,7 @@ public class CommonArrayAlgorithms
         }
 
         average = sum / array.length;
-        
+
         printArray( array );
         System.out.println( "sum: " + sum + " average: " + average );
 
@@ -75,6 +75,20 @@ public class CommonArrayAlgorithms
      */
     public static void printElementSeparators()
     {
+        // creates array
+        int[] array = createRandomArray(10, 10);
+
+        for(int i = 0; i < array.length; i++)
+        {
+            // prints current element
+            System.out.print(array[i]);
+            // adds " | " if not last element
+            if(i < array.length - 1)
+            {
+                // adds " | "
+                System.out.print(" | ");
+            }
+        }
     }
 
     /*
@@ -88,7 +102,17 @@ public class CommonArrayAlgorithms
      */
     public static int linearSearch( int valueToFind )
     {
-        return 0;
+        int[] array = createRandomArray( 10, 10 );
+        int num = -1;
+        boolean isfound = false;
+        for(int i=0;i<array.length;i++){
+            System.out.println(array[i]+ " ");
+            if((valueToFind == array[i]) && !isfound){
+                System.out.println("index of specified value: " + i);
+                num = i; isfound = true;
+            }
+        }
+        return num;
     }
 
     /*
@@ -102,7 +126,23 @@ public class CommonArrayAlgorithms
      */
     public static int countLessThan( int limit )
     {
-        return 0;
+        //we created a random array with arbitrary length and limit
+        int[] nums = createRandomArray(10, 20);
+
+        //count keeps track of the number of elements less than the limit
+        int count = 0;
+
+        for (int number : nums)
+        {
+            if (number < limit)
+            {
+                count++;
+            }
+        }
+
+        printArray(nums);
+        System.out.println("number of elements less than " + limit + " :" + count);
+        return count;
     }
 
     /*
@@ -114,7 +154,22 @@ public class CommonArrayAlgorithms
      */
     public static int findMax() 
     {
-        return 0;
+        int[] rndNums = createRandomArray((int)(Math.random() * 30), 100);
+
+        int maxNum = 0;
+
+        for(int num : rndNums)
+        {
+            if(num > maxNum)
+            {
+                maxNum = num;
+            }
+        }
+
+        printArray(rndNums);
+        System.out.println(maxNum);
+
+        return maxNum;
     }
 
     /*
@@ -128,9 +183,28 @@ public class CommonArrayAlgorithms
      */
     public static int[] reverseArray()
     {
-        return null;
+        int[] array = createRandomArray( 10, 50 );
+        int[] reversedArray = new int[10];
+
+        int counter = 0; // counter will allow us to track the index of reversedArray
+
+        // This for loop will go backwards through the array
+        for(int i = array.length-1; i >= 0; i--)
+        {
+            reversedArray[counter] = array[i];
+            counter++;
+        }
+
+        //The rest of the code is formatting and printing the arrays into the console/terminal
+        System.out.print("Original array: \n");
+        printArray(array);
+
+        System.out.println("Reversed array: ");
+        printArray(reversedArray);
+
+        return reversedArray;
     }
-    
+
     /*
      * Array Algorithm #6: Mode
      *  creates an array filled with random numbers
@@ -146,8 +220,8 @@ public class CommonArrayAlgorithms
          *        create another array to keep track of how many times each value
          *        occurs (index is the number and the value is the number of occurrences)
          */
-         
-         return 0;
+
+        return 0;
     }
 
 }
