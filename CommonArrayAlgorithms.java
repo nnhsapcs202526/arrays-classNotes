@@ -112,6 +112,10 @@ public class CommonArrayAlgorithms
                 num = i; isfound = true;
             }
         }
+        if(num == -1)
+        {
+            System.out.println("index of specified value: " + num);
+        }
         return num;
     }
 
@@ -154,7 +158,7 @@ public class CommonArrayAlgorithms
      */
     public static int findMax() 
     {
-        int[] rndNums = createRandomArray((int)(Math.random() * 30), 100);
+        int[] rndNums = createRandomArray((int)(Math.random() * 30) + 1, 100);
 
         int maxNum = 0;
 
@@ -221,7 +225,68 @@ public class CommonArrayAlgorithms
          *        occurs (index is the number and the value is the number of occurrences)
          */
 
-        return 0;
+        int[] array = createRandomArray(20, 10);
+        int[] values = new int[array.length];
+
+        for(int i = 0; i < array.length; i++)
+        {  
+            for(int j = 0; j < array.length; j++)
+            {
+                if(array[i] == array[j])
+                {
+                    values[i] ++;
+                }
+            }
+        }
+
+        int max = values[0];
+        int mode = array[0];
+
+        for(int k = 0; k < values.length; k++)
+        {
+            if(values[k] > max)
+            {
+                max = values[k];
+                mode = array[k];
+            }
+        }
+
+        printArray(array);
+        printArray(values);
+        System.out.println("Mode: " + mode);
+
+        return mode;
+    }
+    
+    public static int mode2()
+    {
+        /* hint: when creating the random array, specify parameters that will
+         *    likely result in a value being repeated multiple times;
+         *    create another array to keep track of how many times each value
+         *    occurs (index is the number and the value is the number of occurrences)
+         */
+
+        int[] arr = createRandomArray(10,10);
+        int[] countArr = new int[10];
+
+        int maxAmt = 0;
+        int mode = 0;
+        for(int val: arr) {
+
+            countArr[val]++;
+            if(countArr[val] > maxAmt) {
+
+                maxAmt = countArr[val];
+                mode = val;
+            }
+        }
+        printArray(arr);
+        printArray(countArr);
+        
+        System.out.println("Mode: " + mode);
+        System.out.println("Occurence: " + maxAmt);
+
+        return mode;
     }
 
 }
