@@ -136,7 +136,7 @@ public class CommonArrayAlgorithms
     }
      public static int countLessThan2( int limit )
     {
-        int[] nums = createRandomArray(20,100);
+         int[] nums = createRandomArray(20,100);
         int count = 0;
        
         for (int num : nums)
@@ -162,7 +162,16 @@ public class CommonArrayAlgorithms
      */
     public static int findMax() 
     {
-        return 0;
+        int[] arr = createRandomArray(10, 100);
+        printArray(arr);
+        int max = arr[0];     // or Integer.MIN_VALUE;
+        for(int i = 0; i < arr.length; ++i) {
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        System.out.println(max);
+        return max;
     }
 
     /*
@@ -203,7 +212,77 @@ public class CommonArrayAlgorithms
          *        occurs (index is the number and the value is the number of occurrences)
          */
 
+         int[] randArray = createRandomArray(5,5);
+        int[] values = new int[randArray.length];
+        int[] repeat = new int[randArray.length];
+       
+        printArray(randArray);
+       
+        for (int i = 0; i < randArray.length; i++)
+        {
+            for(int j = 0; j < values.length; j++)
+            {
+                if (randArray[i] != values[j])
+                {
+                    values[i] = randArray[i];
+                    repeat[j] +=1;
+                    break;
+                }
+                else if(randArray[i] == values[j])
+                {
+                    repeat[j] += 1;
+                }
+                else if (randArray[i] == 0)
+                {
+                    repeat[j] += 1;
+                }
+            }
+        }
+        int n = 0;
+        int index = 0;
+        for(int i = 0; i < repeat.length; i++)
+        {
+            if(n < repeat[i])
+            {
+                n = repeat[i];
+                index = i;
+            }
+        }
+        printArray(values);
+        printArray(repeat);
+       
+        System.out.println(values[index]);
         return 0;
+    }
+    public static int mode2()
+    {
+        /* hint: when creating the random array, specify parameters that will
+         *    likely result in a value being repeated multiple times;
+         *    create another array to keep track of how many times each value
+         *    occurs (index is the number and the value is the number of occurrences)
+         */
+
+        int[] x = createRandomArray(10,10);
+        int[] countArr = new int[10];
+
+        int maxAmt = 0;
+        int mode = 0;
+        for(int val: x) {
+
+            countArr[val]++;
+            if(countArr[val] > maxAmt) {
+
+                maxAmt = countArr[val];
+                mode = val;
+            }
+        }
+
+        printArray(x);
+        printArray(countArr);
+        System.out.println("Mode: " + mode);
+        System.out.println("Occurence: " + maxAmt);
+
+        return mode;
     }
 
 }
