@@ -107,6 +107,7 @@ public class CommonArrayAlgorithms
                 return i;
             }
 
+
         }
         return -1;
     }
@@ -203,7 +204,27 @@ public class CommonArrayAlgorithms
          *        occurs (index is the number and the value is the number of occurrences)
          */
 
-        return 0;
+        int[] values = createRandomArray(10, 5);
+        int modeValue = -1;
+        int modeAmount = -1;
+
+        for (int i = 0; i < values.length; i++) {
+            int amount = 0;
+            for (int x = 0; x < values.length; x++) {
+                if (values[i] == values[x]) {
+                    amount++;
+                }
+            }
+            if (amount > modeAmount) {
+                modeValue = values[i];
+                modeAmount = amount;
+            }
+        }
+
+        printArray(values);
+        System.out.println("The mode is " + modeValue + " (appears " + modeAmount + " times)");
+
+        return modeValue;
     }
 
 }
