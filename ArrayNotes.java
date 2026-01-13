@@ -3,8 +3,8 @@ import java.util.GregorianCalendar;
 /**
  * Class live-coding notes on arrays.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author mrcallaghan 
+ * @version 13jan2026
  */
 public class ArrayNotes
 {
@@ -126,17 +126,28 @@ public class ArrayNotes
          *      to null. We have to explicitly create *new* objects and assign the
          *      corresponding references to each element.
          */
-        
+        GregorianCalendar[] calendars = new GregorianCalendar[12];
         /*
          * At this point, every element in the array has a value of null.
          */
-
+        for(GregorianCalendar calendar : calendars)
+        {
+            System.out.println(calendar);
+        }
         
         /*
          * Create new calendar objects and assign their references to each element
          *      in the array.
          */
-
+        for(int i = 0; i < calendars.length; i++)
+        {
+            calendars[i] = new GregorianCalendar(2026, i + 1, 1);
+        }
+        
+        for(GregorianCalendar calendar : calendars)
+        {
+            System.out.println(calendar);
+        }
         
         /*
          * An enhanced for loop cannot modify the values of the elements in the array
@@ -144,6 +155,15 @@ public class ArrayNotes
          *      which modify the properties of the referenced objects
          *      (e.g., day of the month).
          */
+        for(GregorianCalendar calendar : calendars)
+        {
+            calendar.add(GregorianCalendar.DAY_OF_MONTH, 2);
+        }
+        
+        for(GregorianCalendar calendar : calendars)
+        {
+            System.out.println(calendar);
+        }
 
     }
     
