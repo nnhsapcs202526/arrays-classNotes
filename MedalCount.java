@@ -44,7 +44,7 @@ public class MedalCount
         {
             // for(int col = 0; col < MEDALS; col++)
             //for(int col = 0; col < this.counts[0].length; col++)
-            // BEST;
+            // BEST:
             for(int col = 0; col < this.counts[row].length; col++)
             {
                 System.out.print(this.counts[row][col] + "\t");
@@ -59,7 +59,7 @@ public class MedalCount
      * @param countryIndex the index for the country in the table whose medals to sum
      * @return the sum of the medals for a specified country
      */
-    public int sumMedalsForCOuntry(int countryIndex)
+    public int sumMedalsForCountry(int countryIndex)
     {
         int sum = 0;
         
@@ -71,6 +71,24 @@ public class MedalCount
         return sum;
     }
     
+    /**
+     * Sum the medals of a given type for the Olympics.
+     * 
+     * @param medalIndex the index of the medal to count up
+     * @return the sum of the specified medalIndex
+     */
+    public int sumMedalsForType(int medalIndex)
+    {
+        int sum = 0;
+        
+        for(int row = 0; row < this.counts.length; row++)
+        {
+            sum += this.counts[row][medalIndex];
+        }
+        
+        return sum;
+    
+    }
     
     
     
