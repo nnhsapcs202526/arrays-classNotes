@@ -6,7 +6,7 @@
  */
 public class CharMatrix
 {
-    // Instance variables:
+    // Instance variables: need is a 2D array of chars
 
     // Constructor: creates a grid with dimensions rows, cols,
     // and fills it with spaces
