@@ -18,6 +18,15 @@ public class PictureTester
         beach.zeroBlue();
         beach.explore();
     }
+    
+    /** Method to keep only Blue */
+    public static void keepOnlyBlue()
+    {
+        Picture beach = new Picture("beach.jpg");
+        beach.explore();
+        beach.keepOnlyBlue();
+        beach.explore();
+    }
 
     /** Method to test mirrorVertical */
     public static void testMirrorVertical()
@@ -105,7 +114,7 @@ public class PictureTester
         // uncomment a call here to run a test
         // and comment out the ones you don't want
         // to run
-        testZeroBlue();
+        //testZeroBlue();
         //testKeepOnlyBlue();
         //testKeepOnlyRed();
         //testKeepOnlyGreen();
